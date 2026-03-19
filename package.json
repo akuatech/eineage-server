@@ -1,0 +1,26 @@
+{
+  "name": "eineage-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "dotenv": "^16.4.7",
+    "mqtt": "^5.10.4"
+  },
+  "devDependencies": {
+    "prisma": "^6.5.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

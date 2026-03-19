@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Metric {
+  id                Int      @id @default(autoincrement())
+  timeDate          DateTime @default(now()) @map("time_date") @db.Timestamptz(6)
+  model             String
+  energyDemand      Json?    @map("energy_demand") @db.JsonB
+  instPower         Json?    @map("inst_power") @db.JsonB
+  elecMeasurements  Json?    @map("elec_measurements") @db.JsonB
+
+  @@index([model, timeDate])
+  @@map("metrics")
+}
