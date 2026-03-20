@@ -11,6 +11,14 @@ const topicTypes = {
 };
 
 const rangeAliases = {
+  '1min': '1min',
+  '1 minute': '1min',
+  minute: '1min',
+  min: '1min',
+  '5min': '5min',
+  '5 minutes': '5min',
+  '15min': '15min',
+  '15 minutes': '15min',
   '1h': '1h',
   '1 hour': '1h',
   hour: '1h',
@@ -26,6 +34,9 @@ const rangeAliases = {
 };
 
 const rangeMs = {
+  '1min': 60 * 1000,
+  '5min': 5 * 60 * 1000,
+  '15min': 15 * 60 * 1000,
   '1h': 60 * 60 * 1000,
   '1d': 24 * 60 * 60 * 1000,
   '1w': 7 * 24 * 60 * 60 * 1000,
