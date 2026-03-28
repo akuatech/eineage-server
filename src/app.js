@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const logsRouter = require('./routes/logs');
@@ -29,6 +31,8 @@ function buildApp() {
   return app;
 }
 
-module.exports = {
-  buildApp
-};
+// Export the app instance as the default (required by Vercel serverless).
+// Attach buildApp so server.js can still do: const { buildApp } = require('./app')
+const app = buildApp();
+app.buildApp = buildApp;
+module.exports = app;
